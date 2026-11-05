@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fond_ecran"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- ===== BANNIÈRE : logo, mode, profil et nombre d'étudiants ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fond_hero"
+            android:orientation="vertical"
+            android:padding="22dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:contentDescription="@string/splash_logo_description"
+                    android:src="@drawable/logo_gestionclasse" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <!-- "Mode Enseignant" ou "Mode Étudiant" : rempli par le Java. -->
+                    <TextView
+                        android:id="@+id/tvRole"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <!-- "Connecté en tant que ..." : étudiant seulement, le Java le rend visible. -->
+                    <TextView
+                        android:id="@+id/tvProfil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textColor="#D9FFFFFF"
+                        android:textSize="14sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- NOUVEAU : "12 étudiants", rempli par le Java. -->
+            <TextView
+                android:id="@+id/tvNbEtudiants"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/fond_puce_hero"
+                android:paddingBottom="6dp"
+                android:paddingEnd="14dp"
+                android:paddingStart="14dp"
+                android:paddingTop="6dp"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- ===== CARTE DE LA CLASSE ===== -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            app:cardBackgroundColor="@color/surface"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/contour"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.08"
+                    android:text="@string/accueil_titre_classe"
+                    android:textColor="@color/texte_secondaire"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <!-- Affiché quand aucune classe n'existe : icône, puis le message. -->
+                <TextView
+                    android:id="@+id/tvClasseVide"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:drawablePadding="12dp"
+                    android:drawableTint="@color/texte_secondaire"
+                    android:drawableTop="@drawable/ic_classe"
+                    android:gravity="center"
+                    android:paddingBottom="12dp"
+                    android:paddingTop="12dp"
+                    android:text="@string/accueil_classe_vide"
+                    android:textColor="@color/texte_secondaire"
+                    android:visibility="gone" />
+
+                <!-- Affiché quand une classe existe. -->
+                <LinearLayout
+                    android:id="@+id/layoutClasse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvClasseIntitule"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/texte_principal"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <!-- L'année universitaire, en pastille. -->
+                    <TextView
+                        android:id="@+id/tvClasseAnnee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/fond_puce"
+                        android:paddingBottom="6dp"
+                        android:paddingEnd="12dp"
+                        android:paddingStart="12dp"
+                        android:paddingTop="6dp"
+                        android:textColor="@color/sur_primaire_conteneur"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvClasseDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:lineSpacingExtra="3dp"
+                        android:textColor="@color/texte_secondaire"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===== TUILES : classe (bleu) et étudiants (orange) côte à côte ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal">
+
+            <!-- Le texte ("Gérer la classe" ou "Consulter la classe") est défini par le Java. -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClasse"
+                android:layout_width="0dp"
+                android:layout_height="132dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/action_gerer_classe"
+                android:textAllCaps="false"
+                android:textColor="@color/sur_accent"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/primaire"
+                app:cornerRadius="22dp"
+                app:icon="@drawable/ic_classe"
+                app:iconGravity="top"
+                app:iconPadding="10dp"
+                app:iconSize="32dp"
+                app:iconTint="@color/sur_accent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEtudiants"
+                android:layout_width="0dp"
+                android:layout_height="132dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/action_gerer_etudiants"
+                android:textAllCaps="false"
+                android:textColor="@color/sur_accent"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/accent_orange"
+                app:cornerRadius="22dp"
+                app:icon="@drawable/ic_etudiants"
+                app:iconGravity="top"
+                app:iconPadding="10dp"
+                app:iconSize="32dp"
+                app:iconTint="@color/sur_accent" />
+        </LinearLayout>
+
+        <!-- ===== TUILE D'ÉCRITURE (vert) : étudiant seulement ===== -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEcrire"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/tuile_ecrire"
+            android:textAllCaps="false"
+            android:textColor="@color/sur_accent"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:backgroundTint="@color/accent_vert"
+            app:cornerRadius="22dp"
+            app:icon="@drawable/ic_notification"
+            app:iconGravity="textStart"
+            app:iconPadding="12dp"
+            app:iconSize="26dp"
+            app:iconTint="@color/sur_accent" />
+
+        <!-- ===== CHANGER DE MODE ou DE PROFIL (le texte change selon le rôle) ===== -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnChangerMode"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="22dp"
+            android:text="@string/action_changer_mode"
+            android:textAllCaps="false"
+            android:textColor="@color/primaire"
+            app:cornerRadius="18dp"
+            app:strokeColor="@color/contour" />
+
+    </LinearLayout>
+</ScrollView>

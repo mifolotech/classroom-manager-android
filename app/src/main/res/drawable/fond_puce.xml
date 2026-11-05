@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pastille arrondie bleu clair. Les couleurs changent en mode sombre. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/primaire_conteneur" />
+    <corners android:radius="14dp" />
+</shape>

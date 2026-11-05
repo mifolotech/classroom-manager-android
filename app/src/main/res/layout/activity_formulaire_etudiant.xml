@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fond_ecran"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- ===== BANNIÈRE : icône et titre ("Nouvel étudiant" ou "Modifier l'étudiant") ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fond_hero"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="22dp">
+
+            <ImageView
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@drawable/cercle_icone"
+                android:contentDescription="@null"
+                android:padding="13dp"
+                android:src="@drawable/ic_etudiants"
+                app:backgroundTint="#33FFFFFF"
+                app:tint="@android:color/white" />
+
+            <!-- Texte défini par le Java. -->
+            <TextView
+                android:id="@+id/tvTitreFormulaire"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_weight="1"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- ===== LE FORMULAIRE, dans une carte ===== -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            app:cardBackgroundColor="@color/surface"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/contour"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- ===== NOM ===== -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/etNom"
+                    android:text="@string/libelle_nom"
+                    android:textColor="@color/primaire"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etNom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/champ_arrondi"
+                    android:hint="@string/indice_nom"
+                    android:inputType="textPersonName|textCapWords"
+                    android:maxLength="50"
+                    android:padding="14dp" />
+
+                <!-- ===== PRÉNOM ===== -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:labelFor="@id/etPrenom"
+                    android:text="@string/libelle_prenom"
+                    android:textColor="@color/primaire"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etPrenom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/champ_arrondi"
+                    android:hint="@string/indice_prenom"
+                    android:inputType="textPersonName|textCapWords"
+                    android:maxLength="50"
+                    android:padding="14dp" />
+
+                <!-- ===== EMAIL ===== -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:labelFor="@id/etEmail"
+                    android:text="@string/libelle_email"
+                    android:textColor="@color/primaire"
+                    android:textStyle="bold" />
+
+                <!-- textEmailAddress : le clavier propose directement la touche @. -->
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/champ_arrondi"
+                    android:hint="@string/indice_email"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="80"
+                    android:padding="14dp" />
+
+                <!-- ===== TÉLÉPHONE ===== -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:labelFor="@id/etTelephone"
+                    android:text="@string/libelle_telephone"
+                    android:textColor="@color/primaire"
+                    android:textStyle="bold" />
+
+                <!-- phone : le clavier numérique de téléphone. -->
+                <EditText
+                    android:id="@+id/etTelephone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/champ_arrondi"
+                    android:hint="@string/indice_telephone"
+                    android:inputType="phone"
+                    android:maxLength="20"
+                    android:padding="14dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEnregistrer"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/action_enregistrer"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/primaire"
+                    app:cornerRadius="16dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAnnuler"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/action_annuler"
+            android:textAllCaps="false"
+            android:textColor="@color/primaire"
+            app:cornerRadius="18dp"
+            app:strokeColor="@color/contour" />
+
+    </LinearLayout>
+</ScrollView>

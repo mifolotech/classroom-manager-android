@@ -1,0 +1,179 @@
+<resources>
+    <string name="app_name">GestionClasse</string>
+
+    <!-- Écran de choix du rôle -->
+    <string name="role_titre">Gestion de classe</string>
+    <string name="role_sous_titre">Choisissez votre mode</string>
+    <string name="role_enseignant">Je suis enseignant</string>
+    <string name="role_etudiant">Je suis étudiant</string>
+
+    <!-- Écran d'accueil -->
+    <string name="mode_enseignant">Mode Enseignant</string>
+    <string name="mode_etudiant">Mode Étudiant</string>
+    <string name="accueil_titre_classe">Ma classe</string>
+    <string name="accueil_classe_vide">Aucune classe créée pour le moment</string>
+    <!-- %1$s : l'année universitaire -->
+    <string name="classe_annee">Année universitaire : %1$s</string>
+    <string name="action_changer_mode">← Changer de mode</string>
+    <!-- Écran de la classe -->
+    <string name="classe_titre">La classe</string>
+    <string name="classe_lecture_seule">Mode lecture seule</string>
+    <string name="classe_absente_etudiant">L\'enseignant n\'a pas encore créé la classe.</string>
+    <string name="libelle_intitule">Intitulé</string>
+    <string name="indice_intitule">Ex. L3 Systèmes informatiques et logiciels</string>
+    <string name="libelle_annee">Année universitaire</string>
+    <string name="indice_annee">Ex. 2026-2027</string>
+    <string name="libelle_description">Description</string>
+    <string name="indice_description">Ex. Promotion de la troisième année</string>
+    <string name="action_creer_classe">Créer la classe</string>
+    <string name="action_enregistrer_classe">Enregistrer les modifications</string>
+    <string name="action_retour">← Retour</string>
+    <string name="msg_classe_enregistree">Classe enregistrée</string>
+    <string name="erreur_champ_obligatoire">Ce champ est obligatoire</string>
+    <string name="erreur_annee">Format attendu : 2026-2027 (deux années consécutives)</string>
+
+    <!-- Boutons de l'accueil -->
+    <string name="action_gerer_classe">Gérer la classe</string>
+    <string name="action_consulter_classe">Consulter la classe</string>
+    <!-- Liste des étudiants -->
+    <string name="etudiants_titre">Les étudiants</string>
+    <string name="etudiants_vide">Aucun étudiant pour le moment</string>
+    <string name="action_gerer_etudiants">Gérer les étudiants</string>
+    <string name="action_ajouter_etudiant">+ Ajouter un étudiant</string>
+    <string name="nom_complet">%1$s %2$s</string>
+    <string name="etudiant_contact">%1$s · %2$s</string>
+
+    <!-- Formulaire -->
+    <string name="form_titre_ajout">Nouvel étudiant</string>
+    <string name="form_titre_modif">Modifier l\'étudiant</string>
+    <string name="libelle_nom">Nom</string>
+    <string name="indice_nom">Ex. Koné</string>
+    <string name="libelle_prenom">Prénom</string>
+    <string name="indice_prenom">Ex. Awa</string>
+    <string name="libelle_email">Email</string>
+    <string name="indice_email">Ex. awa.kone@mail.com</string>
+    <string name="libelle_telephone">Téléphone</string>
+    <string name="indice_telephone">Ex. 0707070707</string>
+    <string name="action_enregistrer">Enregistrer</string>
+    <string name="action_annuler">Annuler</string>
+    <string name="erreur_email">Adresse email invalide</string>
+    <string name="erreur_telephone">Numéro invalide (8 à 15 chiffres, + autorisé au début)</string>
+    <string name="msg_etudiant_ajoute">Étudiant ajouté</string>
+    <string name="msg_etudiant_modifie">Étudiant modifié</string>
+    <string name="msg_etudiant_supprime">Étudiant supprimé</string>
+
+    <!-- Détail -->
+    <string name="detail_titre">Fiche étudiant</string>
+    <string name="action_appeler">📞 Appeler</string>
+    <string name="action_modifier">Modifier</string>
+    <string name="action_supprimer">Supprimer</string>
+    <string name="erreur_appel_indisponible">Aucune application d\'appel disponible</string>
+
+    <!-- Boîte de confirmation de suppression -->
+    <string name="dialog_supprimer_titre">Supprimer cet étudiant ?</string>
+    <string name="dialog_supprimer_message">%1$s sera supprimé ainsi que tous ses messages. Cette action est irréversible.</string>
+    <!-- Liste des étudiants : titres et messages selon le mode -->
+    <string name="etudiants_titre_profil">Qui êtes-vous ?</string>
+    <string name="etudiants_titre_destinataire">Écrire à...</string>
+    <string name="etudiants_vide_profil">Aucun étudiant dans la classe. Demandez à l\'enseignant d\'en ajouter.</string>
+    <string name="etudiants_vide_destinataire">Aucun autre étudiant à qui écrire pour le moment</string>
+    <string name="msg_conversation_bientot">Conversation avec %1$s : bientôt disponible</string>
+
+    <!-- Accueil étudiant -->
+    <string name="action_voir_etudiants">Voir les étudiants</string>
+    <string name="action_ecrire">✉ Écrire à un étudiant</string>
+    <string name="action_changer_profil">← Changer de profil</string>
+    <string name="profil_courant">Connecté en tant que %1$s</string>
+
+    <!-- Conversation -->
+    <string name="conversation_titre">%1$s</string>
+    <string name="conversation_vide">Aucun message. Écrivez le premier !</string>
+    <string name="indice_message">Écrire un message...</string>
+    <string name="action_envoyer">Envoyer</string>
+    <string name="erreur_message_vide">Le message est vide</string>
+
+    <!-- Pièces jointes -->
+    <string name="action_joindre">📎</string>
+    <string name="action_retirer_piece">✕</string>
+    <string name="pj_photo">📷 %1$s</string>
+    <string name="pj_video">🎬 %1$s</string>
+    <string name="pj_document">📄 %1$s</string>
+    <string name="erreur_fichier_introuvable">Fichier introuvable ou supprimé</string>
+    <string name="erreur_aucune_app_fichier">Aucune application pour ouvrir ce fichier</string>
+
+    <!-- Notifications -->
+    <string name="notif_canal_nom">Messages</string>
+    <string name="notif_canal_description">Notifications de nouveaux messages entre étudiants</string>
+    <string name="notif_piece_jointe">📎 Pièce jointe</string>
+    <string name="notif_refusee">Notifications désactivées : activez-les dans les paramètres de l\'application pour être alerté des messages.</string>
+    <string name="notif_dialog_titre">Autoriser les notifications ?</string>
+    <string name="notif_dialog_message">Pour vous avertir à l\'arrivée d\'un message, l\'application a besoin d\'envoyer des notifications.</string>
+    <string name="action_autoriser">Autoriser</string>
+    <string name="action_plus_tard">Plus tard</string>
+
+    <!-- Recherche et compteur -->
+    <string name="indice_recherche">Rechercher un étudiant...</string>
+    <string name="etudiants_aucun_resultat">Aucun étudiant ne correspond à votre recherche</string>
+
+    <!-- Pluriel : Android choisit la forme selon le nombre (en français, 0 et 1 prennent "one"). -->
+    <plurals name="nb_etudiants">
+        <item quantity="one">%d étudiant</item>
+        <item quantity="other">%d étudiants</item>
+    </plurals>
+
+    <!-- E1 : menu sur un message -->
+    <string name="menu_copier">Copier le texte</string>
+    <string name="msg_texte_copie">Texte copié</string>
+    <string name="msg_message_supprime">Message supprimé</string>
+    <string name="dialog_msg_supprimer_titre">Supprimer ce message ?</string>
+    <string name="dialog_msg_supprimer_texte">Ce message sera supprimé définitivement de la conversation.</string>
+    <!-- E2 : description de la miniature (lecteurs d'écran) -->
+    <string name="apercu_description">Aperçu de la photo</string>
+
+    <!-- E3 : email et SMS -->
+    <string name="action_email">✉ Email</string>
+    <string name="action_sms">💬 SMS</string>
+    <string name="erreur_aucune_app_email">Aucune application d\'email disponible</string>
+    <string name="erreur_aucune_app_sms">Aucune application de SMS disponible</string>
+
+    <!-- E4 : partage de la liste -->
+    <string name="action_partager">↗ Partager la liste</string>
+    <string name="partage_objet">Liste des étudiants</string>
+    <string name="partage_chooser">Partager la liste avec...</string>
+    <string name="partage_titre">Liste des étudiants (%1$d)</string>
+    <!-- 5 paramètres : numéro, nom, prénom, email, téléphone -->
+    <string name="partage_ligne">%1$d. %2$s %3$s · %4$s · %5$s</string>
+    <string name="partage_vide">Aucun étudiant à partager</string>
+    <string name="erreur_aucune_app_partage">Aucune application de partage disponible</string>
+
+    <!-- E5 : tri de la liste -->
+    <string name="tri_croissant">Tri : A → Z</string>
+    <string name="tri_decroissant">Tri : Z → A</string>
+
+    <!-- Design : écran de démarrage et choix du rôle -->
+    <string name="splash_logo_description">Logo de GestionClasse</string>
+    <string name="splash_slogan">La classe, simplement connectée.</string>
+    <string name="role_enseignant_desc">Gérer la classe et les étudiants</string>
+    <string name="role_etudiant_desc">Consulter, appeler et écrire à ses camarades</string>
+    <!-- Symbole de flèche des cartes du choix du rôle. -->
+    <string name="symbole_chevron">›</string>
+    <!-- 11.3 : tuile d'écriture sans l'ancien symbole (l'icône le remplace) -->
+    <string name="tuile_ecrire">Écrire à un étudiant</string>
+    <!-- 11.4 : légendes sous les boutons ronds de la fiche étudiant -->
+    <string name="label_appeler">Appeler</string>
+    <string name="label_email">Email</string>
+    <string name="label_sms">SMS</string>
+    <!-- 11.5 : en-tête et accessibilité de la conversation -->
+    <string name="conversation_sous_titre">Messagerie de la classe</string>
+    <string name="desc_retour">Retour</string>
+    <string name="desc_joindre">Joindre un fichier</string>
+    <string name="desc_retirer_piece">Retirer la pièce jointe</string>
+    <!-- 11.6 : choix de l'apparence -->
+    <string name="theme_titre">Apparence</string>
+    <string name="theme_auto">Automatique (réglage du téléphone)</string>
+    <string name="theme_clair">Clair</string>
+    <string name="theme_sombre">Sombre</string>
+    <!-- Appui long sur un message sans action possible -->
+    <string name="msg_aucune_action">Aucune action disponible pour ce message</string>
+
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="espace_ecran">20dp</dimen>
+    <dimen name="espace_element">12dp</dimen>
+    <dimen name="taille_titre">26sp</dimen>
+    <dimen name="hauteur_bouton">56dp</dimen>
+    <!-- Taille de la miniature d'une photo dans une bulle. -->
+    <dimen name="apercu_largeur">200dp</dimen>
+    <dimen name="apercu_hauteur">150dp</dimen>
+</resources>

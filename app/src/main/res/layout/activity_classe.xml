@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fond_ecran"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- ===== BANNIÈRE : icône, titre et mention "lecture seule" ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fond_hero"
+            android:orientation="vertical"
+            android:padding="22dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Cercle translucide avec l'icône de classe. -->
+                <ImageView
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:background="@drawable/cercle_icone"
+                    android:contentDescription="@null"
+                    android:padding="13dp"
+                    android:src="@drawable/ic_classe"
+                    app:backgroundTint="#33FFFFFF"
+                    app:tint="@android:color/white" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:text="@string/classe_titre"
+                    android:textColor="@android:color/white"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Visible pour l'étudiant seulement (le Java le décide). -->
+            <TextView
+                android:id="@+id/tvLectureSeule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/fond_puce_hero"
+                android:paddingBottom="6dp"
+                android:paddingEnd="14dp"
+                android:paddingStart="14dp"
+                android:paddingTop="6dp"
+                android:text="@string/classe_lecture_seule"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- Visible pour l'étudiant quand la classe n'existe pas encore : icône puis message. -->
+        <TextView
+            android:id="@+id/tvClasseAbsente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:drawablePadding="14dp"
+            android:drawableTint="@color/texte_secondaire"
+            android:drawableTop="@drawable/ic_classe"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/classe_absente_etudiant"
+            android:textColor="@color/texte_secondaire"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <!-- ===== LE FORMULAIRE, dans une carte. Le Java peut le masquer en entier. ===== -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/layoutFormulaire"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            app:cardBackgroundColor="@color/surface"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/contour"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- ===== INTITULÉ ===== -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/etIntitule"
+                    android:text="@string/libelle_intitule"
+                    android:textColor="@color/primaire"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etIntitule"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/champ_arrondi"
+                    android:hint="@string/indice_intitule"
+                    android:inputType="textCapSentences"
+                    android:maxLength="80"
+                    android:padding="14dp" />
+
+                <!-- ===== ANNÉE UNIVERSITAIRE ===== -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:labelFor="@id/etAnnee"
+                    android:text="@string/libelle_annee"
+                    android:textColor="@color/primaire"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etAnnee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/champ_arrondi"
+                    android:hint="@string/indice_annee"
+                    android:inputType="text"
+                    android:maxLength="9"
+                    android:padding="14dp" />
+
+                <!-- ===== DESCRIPTION ===== -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:labelFor="@id/etDescription"
+                    android:text="@string/libelle_description"
+                    android:textColor="@color/primaire"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/champ_arrondi"
+                    android:gravity="top"
+                    android:hint="@string/indice_description"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:maxLength="300"
+                    android:minLines="3"
+                    android:padding="14dp" />
+
+                <!-- Masqué pour l'étudiant. Son texte change selon "création" ou "modification". -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEnregistrer"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/action_creer_classe"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/primaire"
+                    app:cornerRadius="16dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRetour"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/action_retour"
+            android:textAllCaps="false"
+            android:textColor="@color/primaire"
+            app:cornerRadius="18dp"
+            app:strokeColor="@color/contour" />
+
+    </LinearLayout>
+</ScrollView>

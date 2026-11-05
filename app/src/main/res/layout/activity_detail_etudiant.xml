@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fond_ecran"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- ===== BANNIÈRE : grand avatar et nom ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fond_hero"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fond_puce_hero"
+                android:paddingBottom="6dp"
+                android:paddingEnd="14dp"
+                android:paddingStart="14dp"
+                android:paddingTop="6dp"
+                android:text="@string/detail_titre"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <!-- Avatar : cercle blanc colorié par le Java, avec les initiales. -->
+            <TextView
+                android:id="@+id/tvInitiales"
+                android:importantForAccessibility="no"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/cercle_icone"
+                android:gravity="center"
+                android:textColor="@color/sur_accent"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <!-- Nom et prénom, rempli par le Java. -->
+            <TextView
+                android:id="@+id/tvNomComplet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- ===== TROIS BOUTONS RONDS : Appeler, Email, SMS ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:orientation="horizontal">
+
+            <!-- Appeler (vert) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnAppeler"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/label_appeler"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/accent_vert"
+                    app:cardCornerRadius="32dp"
+                    app:cardElevation="4dp"
+                    app:strokeWidth="0dp">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_appel"
+                        app:tint="@color/sur_accent" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/label_appeler"
+                    android:textColor="@color/texte_secondaire"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Email (bleu) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnEmail"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/label_email"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/primaire"
+                    app:cardCornerRadius="32dp"
+                    app:cardElevation="4dp"
+                    app:strokeWidth="0dp">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_email"
+                        app:tint="@color/sur_accent" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/label_email"
+                    android:textColor="@color/texte_secondaire"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- SMS (orange) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnSms"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/label_sms"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/accent_orange"
+                    app:cardCornerRadius="32dp"
+                    app:cardElevation="4dp"
+                    app:strokeWidth="0dp">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_sms"
+                        app:tint="@color/sur_accent" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/label_sms"
+                    android:textColor="@color/texte_secondaire"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ===== CARTE D'INFORMATIONS ===== -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            app:cardBackgroundColor="@color/surface"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/contour"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/libelle_email"
+                    android:textColor="@color/texte_secondaire"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/texte_principal"
+                    android:textSize="16sp" />
+
+                <!-- Trait de séparation. -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="14dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@color/contour" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/libelle_telephone"
+                    android:textColor="@color/texte_secondaire"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTelephone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/texte_principal"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===== Actions réservées à l'enseignant : le Java masque tout ce bloc pour l'étudiant. ===== -->
+        <LinearLayout
+            android:id="@+id/layoutActionsEnseignant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnModifier"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:text="@string/action_modifier"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                app:backgroundTint="@color/primaire"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ic_modifier"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSupprimer"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:text="@string/action_supprimer"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                app:backgroundTint="@color/rouge_supprimer"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ic_supprimer"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRetour"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="14dp"
+            android:text="@string/action_retour"
+            android:textAllCaps="false"
+            android:textColor="@color/primaire"
+            app:cornerRadius="18dp"
+            app:strokeColor="@color/contour" />
+
+    </LinearLayout>
+</ScrollView>

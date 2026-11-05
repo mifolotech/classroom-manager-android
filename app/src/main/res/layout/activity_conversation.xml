@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fond_ecran"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <!-- ===== EN-TÊTE : bouton retour rond, avatar, nom et sous-titre ===== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@drawable/fond_hero"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <!-- Bouton retour : une carte ronde cliquable, translucide sur le dégradé (48dp : zone tactile confortable). -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnRetour"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:clickable="true"
+            android:contentDescription="@string/desc_retour"
+            android:focusable="true"
+            app:cardBackgroundColor="#33FFFFFF"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_retour"
+                app:tint="@android:color/white" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Avatar de l'interlocuteur : cercle colorié par le Java, avec ses initiales.
+             Décoratif : les lecteurs d'écran l'ignorent, car le nom suffit. -->
+        <TextView
+            android:id="@+id/tvInitiales"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/cercle_icone"
+            android:gravity="center"
+            android:importantForAccessibility="no"
+            android:textColor="@color/sur_accent"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Le nom de l'interlocuteur, rempli par le Java. -->
+            <TextView
+                android:id="@+id/tvTitre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/conversation_sous_titre"
+                android:textColor="#D9FFFFFF"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ===== MESSAGES ===== -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMessages"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="@dimen/espace_element" />
+
+        <!-- Conversation vide : icône, puis message accueillant. -->
+        <TextView
+            android:id="@+id/tvVide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawablePadding="14dp"
+            android:drawableTint="@color/texte_secondaire"
+            android:drawableTop="@drawable/ic_sms"
+            android:gravity="center"
+            android:padding="24dp"
+            android:text="@string/conversation_vide"
+            android:textColor="@color/texte_secondaire"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <!-- ===== La pièce jointe choisie : trombone, nom et bouton de fermeture. Cachée par défaut. ===== -->
+    <LinearLayout
+        android:id="@+id/layoutPieceChoisie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="4dp"
+        android:paddingEnd="8dp"
+        android:paddingStart="16dp"
+        android:paddingTop="4dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_joindre"
+            app:tint="@color/primaire" />
+
+        <TextView
+            android:id="@+id/tvPieceChoisie"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/primaire"
+            android:textStyle="bold" />
+
+        <!-- Bouton ✕ : 48dp, la zone tactile minimale recommandée par Android. -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnRetirerPiece"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:clickable="true"
+            android:contentDescription="@string/desc_retirer_piece"
+            android:focusable="true"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_fermer"
+                app:tint="@color/texte_secondaire" />
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <!-- ===== BARRE DE SAISIE : trombone, champ en pilule, bouton d'envoi rond ===== -->
+    <!-- gravity bottom : si le champ grandit sur plusieurs lignes, les boutons restent en bas. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- Ouvre le sélecteur de fichiers (48dp). -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnJoindre"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:clickable="true"
+            android:contentDescription="@string/desc_joindre"
+            android:focusable="true"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_joindre"
+                app:tint="@color/texte_secondaire" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Le champ de saisie : fond en pilule, il grandit jusqu'à 4 lignes. -->
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/fond_champ_message"
+            android:gravity="center_vertical"
+            android:hint="@string/indice_message"
+            android:inputType="textMultiLine|textCapSentences"
+            android:maxLength="500"
+            android:maxLines="4"
+            android:minHeight="48dp"
+            android:paddingBottom="10dp"
+            android:paddingEnd="18dp"
+            android:paddingStart="18dp"
+            android:paddingTop="10dp" />
+
+        <!-- Bouton d'envoi : cercle bleu avec une flèche. -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnEnvoyer"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:clickable="true"
+            android:contentDescription="@string/action_envoyer"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/primaire"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_envoyer"
+                app:tint="@color/sur_primaire" />
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+</LinearLayout>

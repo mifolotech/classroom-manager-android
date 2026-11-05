@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:interpolator/decelerate_cubic">
+    <!-- 12%p : 12 % de la largeur du parent. Un petit glissement suffit, c'est plus élégant. -->
+    <translate
+        android:duration="320"
+        android:fromXDelta="12%p"
+        android:toXDelta="0" />
+    <alpha
+        android:duration="320"
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0" />
+</set>

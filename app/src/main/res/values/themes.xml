@@ -1,0 +1,47 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Thème de l'application. DayNight : il bascule seul entre clair et sombre. -->
+    <style name="Base.Theme.GestionClasse" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Couleurs de marque : lues dans colors.xml, donc différentes en mode sombre. -->
+        <item name="colorPrimary">@color/primaire</item>
+        <item name="colorOnPrimary">@color/sur_primaire</item>
+        <item name="colorPrimaryContainer">@color/primaire_conteneur</item>
+        <item name="colorOnPrimaryContainer">@color/sur_primaire_conteneur</item>
+
+        <!-- Couleurs d'accent. -->
+        <item name="colorSecondary">@color/accent_orange</item>
+        <item name="colorOnSecondary">@color/sur_accent</item>
+        <item name="colorTertiary">@color/accent_vert</item>
+        <item name="colorError">@color/accent_rouge</item>
+
+        <!-- Fonds, surfaces et textes. -->
+        <item name="android:colorBackground">@color/fond_ecran</item>
+        <item name="android:windowBackground">@color/fond_ecran</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/texte_principal</item>
+        <item name="colorOnSurfaceVariant">@color/texte_secondaire</item>
+        <item name="colorOutline">@color/contour</item>
+
+        <!-- NOUVEAU (11.6) : les transitions entre écrans. -->
+        <item name="android:windowAnimationStyle">@style/Animation.GestionClasse</item>
+    </style>
+
+    <style name="Theme.GestionClasse" parent="Base.Theme.GestionClasse" />
+
+    <!-- NOUVEAU (11.6) : l'animation à l'ouverture et à la fermeture d'un écran. -->
+    <style name="Animation.GestionClasse" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+    <!-- Thème de l'écran de démarrage : barres système claires sur fond foncé. -->
+    <style name="Theme.GestionClasse.Splash" parent="Theme.GestionClasse">
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="31">@color/fond_splash</item>
+        <item name="android:windowBackground">@color/fond_splash</item>
+    </style>
+
+</resources>

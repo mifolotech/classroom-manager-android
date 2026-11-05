@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Logo : un carré arrondi en dégradé bleu, un chapeau d'étudiant blanc,
+     et une bulle de message orange (la messagerie). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="132dp"
+    android:height="132dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Carré arrondi avec dégradé bleu -->
+    <path android:pathData="M32,6h44a26,26 0 0 1 26,26v44a26,26 0 0 1 -26,26h-44a26,26 0 0 1 -26,-26v-44a26,26 0 0 1 26,-26z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="102"
+                android:endY="102"
+                android:startX="6"
+                android:startY="6"
+                android:type="linear">
+                <item android:color="#2F6BFF" android:offset="0.0" />
+                <item android:color="#16328C" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Chapeau d'étudiant, agrandi et placé en haut à gauche -->
+    <group
+        android:scaleX="2.4"
+        android:scaleY="2.4"
+        android:translateX="21.2"
+        android:translateY="19.2">
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M5,13.18v4L12,21l7,-3.82v-4L12,17l-7,-3.82zM12,3L1,9l11,6 9,-4.91V17h2V9L12,3z" />
+    </group>
+
+    <!-- Bulle de message orange avec un contour blanc, en bas à droite -->
+    <path
+        android:fillColor="#F97316"
+        android:pathData="M77,76m-13,0a13,13 0 1,1 26,0a13,13 0 1,1 -26,0"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.4" />
+    <!-- Trois points de saisie -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M71.5,76m-2.2,0a2.2,2.2 0 1,1 4.4,0a2.2,2.2 0 1,1 -4.4,0" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M77,76m-2.2,0a2.2,2.2 0 1,1 4.4,0a2.2,2.2 0 1,1 -4.4,0" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M82.5,76m-2.2,0a2.2,2.2 0 1,1 4.4,0a2.2,2.2 0 1,1 -4.4,0" />
+</vector>

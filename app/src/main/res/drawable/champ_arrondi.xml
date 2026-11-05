@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fond d'un champ de saisie. Android choisit la forme selon l'état du champ :
+     la première qui correspond est utilisée. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Champ désactivé (lecture seule) : fond grisé. -->
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/fond_ecran" />
+            <stroke
+                android:width="1dp"
+                android:color="@color/contour" />
+            <corners android:radius="14dp" />
+        </shape>
+    </item>
+
+    <!-- Champ en cours de saisie : contour bleu épais. -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/surface" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/primaire" />
+            <corners android:radius="14dp" />
+        </shape>
+    </item>
+
+    <!-- Champ au repos. -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/surface" />
+            <stroke
+                android:width="1dp"
+                android:color="@color/contour" />
+            <corners android:radius="14dp" />
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permission de notification, demandée à l'exécution sur Android 13 et plus. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:name=".GestionClasseApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GestionClasse">
+
+        <!-- ===== Écran de démarrage : ouvert au toucher de l'icône. ===== -->
+        <!-- exported true est obligatoire car il possède un intent-filter. -->
+        <activity
+            android:name=".ui.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.GestionClasse.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ===== Écrans internes : non exportés, seule l'application peut les ouvrir. ===== -->
+        <activity
+            android:name=".ui.RoleActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.AccueilActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.ClasseActivity"
+            android:exported="false" />
+
+        <!-- stateHidden : le clavier ne surgit pas à l'ouverture à cause du champ de recherche. -->
+        <activity
+            android:name=".ui.ListeEtudiantsActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".ui.FormulaireEtudiantActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.DetailEtudiantActivity"
+            android:exported="false" />
+
+        <!-- adjustResize : l'écran se redimensionne avec le clavier,
+             pour que la barre de saisie reste visible. -->
+        <activity
+            android:name=".ui.ConversationActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+    </application>
+
+</manifest>

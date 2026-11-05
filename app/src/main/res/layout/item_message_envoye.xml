@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Conteneur pleine largeur. gravity end : la bulle se place à DROITE. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="end"
+    android:orientation="vertical"
+    android:paddingBottom="3dp"
+    android:paddingTop="3dp">
+
+    <!-- La bulle. layout_marginStart 56dp : elle ne prend jamais toute la largeur. -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:background="@drawable/bulle_envoye"
+        android:orientation="vertical"
+        android:paddingBottom="9dp"
+        android:paddingEnd="14dp"
+        android:paddingStart="14dp"
+        android:paddingTop="9dp">
+
+        <!-- Miniature de la photo. clipToOutline : la photo suit les coins arrondis du fond. -->
+        <ImageView
+            android:id="@+id/ivApercu"
+            android:layout_width="@dimen/apercu_largeur"
+            android:layout_height="@dimen/apercu_hauteur"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/fond_apercu"
+            android:clipToOutline="true"
+            android:contentDescription="@string/apercu_description"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvContenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="2dp"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvPieceJointe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <!-- Date et heure, alignées à droite dans la bulle. -->
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/date_envoye"
+            android:textSize="11sp" />
+    </LinearLayout>
+</LinearLayout>

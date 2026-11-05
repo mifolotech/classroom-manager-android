@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Fond dégradé, contenu centré, barre de chargement en bas. Les éléments démarrent invisibles (alpha 0) :
+     le Java les fait apparaître en douceur. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fond_splash">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="132dp"
+            android:layout_height="132dp"
+            android:alpha="0"
+            android:contentDescription="@string/splash_logo_description"
+            android:src="@drawable/logo_gestionclasse" />
+
+        <TextView
+            android:id="@+id/tvNom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:alpha="0"
+            android:letterSpacing="0.04"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <!-- Petit trait orange sous le nom. -->
+        <View
+            android:layout_width="44dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/trait_orange" />
+
+        <TextView
+            android:id="@+id/tvSlogan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:alpha="0"
+            android:text="@string/splash_slogan"
+            android:textColor="#CCFFFFFF"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <!-- Barre de chargement fine, en bas. -->
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="72dp"
+        android:alpha="0"
+        android:indeterminate="true"
+        app:indicatorColor="#F97316"
+        app:trackColor="#33FFFFFF"
+        app:trackCornerRadius="3dp"
+        app:trackThickness="3dp" />
+
+</FrameLayout>

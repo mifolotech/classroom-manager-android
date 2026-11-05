@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Mêmes noms que colors.xml, mais valeurs pour le MODE SOMBRE.
+     Android choisit tout seul le bon fichier selon le réglage du téléphone.
+     En sombre, les couleurs sont ÉCLAIRCIES pour rester lisibles sur le fond foncé. -->
+<resources>
+    <color name="primaire">#8DB1FF</color>
+    <color name="sur_primaire">#0B1530</color>
+    <color name="primaire_conteneur">#1B3A8C</color>
+    <color name="sur_primaire_conteneur">#DCE6FF</color>
+
+    <color name="accent_orange">#FFA45C</color>
+    <color name="accent_vert">#3DD68C</color>
+    <color name="accent_rouge">#FF7B7B</color>
+    <color name="sur_accent">#0B1530</color>
+
+    <color name="fond_ecran">#0E1525</color>
+    <color name="surface">#18233D</color>
+    <color name="texte_principal">#E8EEFB</color>
+    <color name="texte_secondaire">#A3B1C9</color>
+    <color name="contour">#2B3858</color>
+
+    <color name="vert_etudiant">#3DD68C</color>
+    <color name="rouge_supprimer">#FF7B7B</color>
+
+    <color name="bulle_envoye">#2F5DD0</color>
+    <color name="bulle_recu">#223152</color>
+    <color name="date_envoye">#C5D5FF</color>
+    <color name="apercu_fond">#33FFFFFF</color>
+
+    <color name="hero_debut">#2447A8</color>
+    <color name="hero_fin">#0A1330</color>
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- ===== Marque : bleu royal ===== -->
+    <color name="primaire">#1D4ED8</color>
+    <color name="sur_primaire">#FFFFFF</color>
+    <color name="primaire_conteneur">#DCE6FF</color>
+    <color name="sur_primaire_conteneur">#0B2A7A</color>
+
+    <!-- ===== Accents : orange, vert, rouge ===== -->
+    <color name="accent_orange">#D9480F</color>
+    <color name="accent_vert">#14804A</color>
+    <color name="accent_rouge">#C62F2F</color>
+    <!-- Couleur du texte ou de l'icône posé SUR un accent. -->
+    <color name="sur_accent">#FFFFFF</color>
+
+    <!-- ===== Fonds, surfaces et textes ===== -->
+    <color name="fond_ecran">#E9EEF8</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="texte_principal">#0F1B33</color>
+    <color name="texte_secondaire">#5B6B82</color>
+    <color name="contour">#D3DBEA</color>
+
+    <!-- ===== Anciens noms conservés : les écrans existants les utilisent encore ===== -->
+    <color name="vert_etudiant">#14804A</color>
+    <color name="rouge_supprimer">#C62F2F</color>
+
+    <!-- ===== Conversation ===== -->
+    <color name="bulle_envoye">#1D4ED8</color>
+    <color name="bulle_recu">#FFFFFF</color>
+    <color name="date_envoye">#CBD9FF</color>
+    <color name="apercu_fond">#1F000000</color>
+
+    <!-- ===== Bannière dégradée et écran de démarrage ===== -->
+    <color name="hero_debut">#1D4ED8</color>
+    <color name="hero_fin">#0F2A6B</color>
+    <color name="fond_splash">#0D1B3E</color>
+</resources>
